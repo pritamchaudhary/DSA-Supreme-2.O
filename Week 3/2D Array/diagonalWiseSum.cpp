@@ -4,14 +4,20 @@
 using namespace std;
 
 void diagonalWiseSum(int arr[][4], int row, int col){
-    int sum = 0;
+    int sum_major = 0;
+    int sum_minor = 0;
     for(int i=0; i<row; i++){ 
-        sum = sum + arr[i][i];
+        for(int j=0; j<col; j++){
+            if(i == j){
+                sum_major = sum_major + arr[i][j];
+            }
+            if((i+j) == col-1){
+                sum_minor = sum_minor + arr[i][j];
+            }
+        }
     }
-
-    for(int i=0; i<row; i++){
-        cout<<arr[i][i];
-    }
+    cout<<"The sum of the major diagonal: "<<sum_major<<endl;
+    cout<<"The sum of the minor diagonal: "<<sum_minor<<endl;
 }
 
 int main(){
