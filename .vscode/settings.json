@@ -2,6 +2,7 @@
     "files.associations": {
         "utility": "cpp",
         "algorithm": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "vector": "cpp"
     }
 }
