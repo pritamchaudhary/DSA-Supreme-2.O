@@ -1,7 +1,6 @@
 // queue implementation from scratch
 
 #include<iostream>
-#include<queue>
 using namespace std;
 
 class Queue{
