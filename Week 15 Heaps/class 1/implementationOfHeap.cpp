@@ -43,6 +43,8 @@ public:
                 break;
             }
         }
+
+
     }
     void printHeap()
     {
@@ -50,6 +52,39 @@ public:
         {
             cout << arr[i] << " ";
         }
+    }
+
+    int deleteFromHeap(){
+        int answer = arr[1];
+        // replacement
+        arr[1] = arr[size];
+        // delete last element from it's original position
+        size--;
+
+        int index = 1;
+        while(index < size){
+            int leftIndex = 2 * index;
+            int rightIndex = 2 * index + 1;
+
+            // find out who is bigger
+            int largestElementIndex = index;
+            // check left child
+            if(leftIndex <= size && arr[largestElementIndex] < arr[leftIndex]){
+                largestElementIndex = leftIndex;
+            }
+            if(rightIndex <= size && arr[largestElementIndex] < arr[rightIndex]){
+                largestElementIndex = rightIndex;
+            }
+            // no change
+            if(index == largestElementIndex){
+                break;
+            }
+            else{
+                swap(arr[index], arr[largestElementIndex]);
+                index = largestElementIndex;
+            }
+        }
+        return answer;
     }
 };
 
@@ -65,6 +100,10 @@ int main()
 
     cout << "Printing the content of Heap: " << endl;
     h.printHeap();
+    cout<<endl;
+
+    int ans = h.deleteFromHeap();
+    cout<<"Answer: "<<ans<<endl;
 
     return 0;
 }
