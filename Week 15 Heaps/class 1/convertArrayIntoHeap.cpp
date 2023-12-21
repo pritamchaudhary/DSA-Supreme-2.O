@@ -117,7 +117,14 @@ void buildHeap(int arr[], int n){
 
 int main()
 {
-    Heap h(20);
+    int arr[] = {-1, 5, 10, 15, 20, 25, 12};
+    int n = 6;
+    buildHeap(arr, n);
+    cout<<"printing heap: "<<endl;
+    for(int i=1; i<=n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
     
 
     return 0;
