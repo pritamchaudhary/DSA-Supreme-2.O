@@ -54,5 +54,6 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "stack": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
